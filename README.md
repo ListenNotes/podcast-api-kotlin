@@ -169,9 +169,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("q", "startup");
-      parameters.put("type", "podcast");
-      val response = objClient.search(parameters);            
+    parameters.put("q", "startup");
+    parameters.put("type", "podcast");
+    val response = objClient.search(parameters);            
               
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -1017,9 +1017,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("q", "startup");
-      parameters.put("show_podcasts", "1");
-      val response = objClient.typeahead(parameters);            
+    parameters.put("q", "startup");
+    parameters.put("show_podcasts", "1");
+    val response = objClient.typeahead(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -1237,8 +1237,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("id", "4d3fe717742d4963a85562e9f84d8c79");
-      val response = objClient.fetchPodcastById(parameters);            
+    parameters.put("id", "4d3fe717742d4963a85562e9f84d8c79");
+    val response = objClient.fetchPodcastById(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -1800,8 +1800,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("id", "6b6d65930c5a4f71b254465871fed370");
-      val response = objClient.fetchEpisodeById(parameters);            
+    parameters.put("id", "6b6d65930c5a4f71b254465871fed370");
+    val response = objClient.fetchEpisodeById(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -2215,7 +2215,7 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      val response = objClient.fetchPodcastLanguages(parameters);            
+    val response = objClient.fetchPodcastLanguages(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -2395,8 +2395,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("top_level_only", "1");
-      val response = objClient.fetchPodcastGenres(parameters);            
+    parameters.put("top_level_only", "1");
+    val response = objClient.fetchPodcastGenres(parameters);            
 
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -2596,9 +2596,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("page", "2");
-      parameters.put("region_id", "93");
-      val response = objClient.fetchBestPodcasts(parameters);            
+    parameters.put("page", "2");
+    parameters.put("region_id", "93");
+    val response = objClient.fetchBestPodcasts(parameters);            
 
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -3927,7 +3927,7 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      val response = objClient.fetchPodcastRegions(parameters);            
+    val response = objClient.fetchPodcastRegions(parameters);            
 
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -4151,9 +4151,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("id", "25212ac3c53240a880dd5032e547047b");
-      parameters.put("safe_mode", "1");
-      val response = objClient.fetchRecommendationsForPodcast(parameters);            
+    parameters.put("id", "25212ac3c53240a880dd5032e547047b");
+    parameters.put("safe_mode", "1");
+    val response = objClient.fetchRecommendationsForPodcast(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -4837,9 +4837,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("id", "914a9deafa5340eeaa2859c77f275799");
-      parameters.put("safe_mode", "1");
-      val response = objClient.fetchRecommendationsForEpisode(parameters);            
+    parameters.put("id", "914a9deafa5340eeaa2859c77f275799");
+    parameters.put("safe_mode", "1");
+    val response = objClient.fetchRecommendationsForEpisode(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -5231,8 +5231,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("ids", "c577d55b2b2b483c969fae3ceb58e362,0f34a9099579490993eec9e8c8cebb82");
-      val response = objClient.batchFetchEpisodes(parameters);            
+    parameters.put("ids", "c577d55b2b2b483c969fae3ceb58e362,0f34a9099579490993eec9e8c8cebb82");
+    val response = objClient.batchFetchEpisodes(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -5471,8 +5471,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("ids", "3302bc71139541baa46ecb27dbf6071a,68faf62be97149c280ebcc25178aa731,9cf19c590ff0484d97b18b329fed0c6a");
-      val response = objClient.batchFetchPodcasts(parameters);            
+    parameters.put("ids", "3302bc71139541baa46ecb27dbf6071a,68faf62be97149c280ebcc25178aa731,9cf19c590ff0484d97b18b329fed0c6a");
+    val response = objClient.batchFetchPodcasts(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -6662,7 +6662,7 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      val response = objClient.justListen(parameters);            
+    val response = objClient.justListen(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -6858,8 +6858,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("id", "SDFKduyJ47r");
-      val response = objClient.fetchCuratedPodcastsListById(parameters);            
+    parameters.put("id", "SDFKduyJ47r");
+    val response = objClient.fetchCuratedPodcastsListById(parameters);            
 
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -7969,8 +7969,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("page", "2");
-      val response = objClient.fetchCuratedPodcastsLists(parameters);            
+    parameters.put("page", "2");
+    val response = objClient.fetchCuratedPodcastsLists(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -9409,8 +9409,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("rss", "https://feeds.megaphone.fm/committed");
-      val response = objClient.submitPodcast(parameters);            
+    parameters.put("rss", "https://feeds.megaphone.fm/committed");
+    val response = objClient.submitPodcast(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -9540,8 +9540,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("id", "4d3fe717742d4963a85562e9f84d8c79");
-      val response = objClient.deletePodcast(parameters);            
+    parameters.put("id", "4d3fe717742d4963a85562e9f84d8c79");
+    val response = objClient.deletePodcast(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -9622,9 +9622,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("id", "m1pe7z60bsw");
-      parameters.put("type", "podcast_list");
-      val response = objClient.fetchPlaylistById(parameters);            
+    parameters.put("id", "m1pe7z60bsw");
+    parameters.put("type", "podcast_list");
+    val response = objClient.fetchPlaylistById(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -10828,9 +10828,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-      parameters.put("page", "2");
-      parameters.put("sort", "name_a_to_z");
-      val response = objClient.fetchMyPlaylists(parameters);            
+    parameters.put("page", "2");
+    parameters.put("sort", "name_a_to_z");
+    val response = objClient.fetchMyPlaylists(parameters);            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
