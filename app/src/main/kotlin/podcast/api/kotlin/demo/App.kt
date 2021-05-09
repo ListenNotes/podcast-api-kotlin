@@ -4,8 +4,8 @@
  */
 package podcast.api.kotlin.demo
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
     try {

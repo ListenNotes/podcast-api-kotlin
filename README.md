@@ -75,8 +75,8 @@ available in your [Listen API Dashboard](https://www.listennotes.com/api/dashboa
 value:
 
 ```kotlin
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
     try {
@@ -137,7 +137,6 @@ And you can see some sample code [here](https://github.com/ListenNotes/podcast-a
 
 
 
-
 ## API Reference
 
 Each function is a wrapper to send an HTTP request to the corresponding endpoint on the
@@ -159,8 +158,8 @@ The ENTERPRISE plan allows to see up to 10,000 search results (or `offset` &lt; 
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -169,9 +168,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("q", "startup");
-    parameters.put("type", "podcast");
-    val response = objClient.search(parameters);            
+    parameters.put("q", "startup")
+    parameters.put("type", "podcast")
+    val response = objClient.search(parameters)            
               
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -1007,8 +1006,8 @@ Suggest search terms, podcast genres, and podcasts.
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -1017,9 +1016,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("q", "startup");
-    parameters.put("show_podcasts", "1");
-    val response = objClient.typeahead(parameters);            
+    parameters.put("q", "startup")
+    parameters.put("show_podcasts", "1")
+    val response = objClient.typeahead(parameters)            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -1227,8 +1226,8 @@ You can use the **next_episode_pub_date** parameter to do pagination and fetch m
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -1237,8 +1236,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("id", "4d3fe717742d4963a85562e9f84d8c79");
-    val response = objClient.fetchPodcastById(parameters);            
+    parameters.put("id", "4d3fe717742d4963a85562e9f84d8c79")
+    val response = objClient.fetchPodcastById(parameters)          
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -1790,8 +1789,8 @@ Fetch detailed meta data for a specific episode.
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -1800,8 +1799,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("id", "6b6d65930c5a4f71b254465871fed370");
-    val response = objClient.fetchEpisodeById(parameters);            
+    parameters.put("id", "6b6d65930c5a4f71b254465871fed370")
+    val response = objClient.fetchEpisodeById(parameters)          
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -2205,8 +2204,8 @@ Get a list of languages that are supported in Listen Notes database. You can use
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -2215,7 +2214,7 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    val response = objClient.fetchPodcastLanguages(parameters);            
+    val response = objClient.fetchPodcastLanguages(parameters)          
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -2385,8 +2384,8 @@ You may want to cache the list of genres on the client side.
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -2395,8 +2394,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("top_level_only", "1");
-    val response = objClient.fetchPodcastGenres(parameters);            
+    parameters.put("top_level_only", "1")
+    val response = objClient.fetchPodcastGenres(parameters)        
 
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -2586,8 +2585,8 @@ This endpoint returns same data as https://www.listennotes.com/best-podcasts/
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -2596,9 +2595,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("page", "2");
-    parameters.put("region_id", "93");
-    val response = objClient.fetchBestPodcasts(parameters);            
+    parameters.put("page", "2")
+    parameters.put("region_id", "93")
+    val response = objClient.fetchBestPodcasts(parameters)        
 
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -3917,8 +3916,8 @@ It returns a dictionary of country codes (e.g., us, gb...) &amp; country names (
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -3927,7 +3926,7 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    val response = objClient.fetchPodcastRegions(parameters);            
+    val response = objClient.fetchPodcastRegions(parameters)          
 
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -4141,8 +4140,8 @@ Fetch up to 8 podcast recommendations based on the given podcast id.
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -4151,9 +4150,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("id", "25212ac3c53240a880dd5032e547047b");
-    parameters.put("safe_mode", "1");
-    val response = objClient.fetchRecommendationsForPodcast(parameters);            
+    parameters.put("id", "25212ac3c53240a880dd5032e547047b")
+    parameters.put("safe_mode", "1")
+    val response = objClient.fetchRecommendationsForPodcast(parameters)           
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -4827,8 +4826,8 @@ Fetch up to 8 episode recommendations based on the given episode id.
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -4837,9 +4836,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("id", "914a9deafa5340eeaa2859c77f275799");
-    parameters.put("safe_mode", "1");
-    val response = objClient.fetchRecommendationsForEpisode(parameters);            
+    parameters.put("id", "914a9deafa5340eeaa2859c77f275799")
+    parameters.put("safe_mode", "1")
+    val response = objClient.fetchRecommendationsForEpisode(parameters)        
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -5221,8 +5220,8 @@ Batch fetch basic meta data for up to 10 episodes. This endpoint could be used t
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -5231,8 +5230,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("ids", "c577d55b2b2b483c969fae3ceb58e362,0f34a9099579490993eec9e8c8cebb82");
-    val response = objClient.batchFetchEpisodes(parameters);            
+    parameters.put("ids", "c577d55b2b2b483c969fae3ceb58e362,0f34a9099579490993eec9e8c8cebb82")
+    val response = objClient.batchFetchEpisodes(parameters)         
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -5461,8 +5460,8 @@ For detailed meta data (including episodes) of an individual podcast, you need t
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -5471,8 +5470,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("ids", "3302bc71139541baa46ecb27dbf6071a,68faf62be97149c280ebcc25178aa731,9cf19c590ff0484d97b18b329fed0c6a");
-    val response = objClient.batchFetchPodcasts(parameters);            
+    parameters.put("ids", "3302bc71139541baa46ecb27dbf6071a,68faf62be97149c280ebcc25178aa731,9cf19c590ff0484d97b18b329fed0c6a")
+    val response = objClient.batchFetchPodcasts(parameters)    
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -6652,8 +6651,8 @@ Recently published episodes are more likely to be fetched. Good luck!
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -6662,7 +6661,7 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    val response = objClient.justListen(parameters);            
+    val response = objClient.justListen(parameters)         
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -6848,8 +6847,8 @@ This endpoint returns same data as https://www.listennotes.com/curated-podcasts/
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -6858,8 +6857,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("id", "SDFKduyJ47r");
-    val response = objClient.fetchCuratedPodcastsListById(parameters);            
+    parameters.put("id", "SDFKduyJ47r")
+    val response = objClient.fetchCuratedPodcastsListById(parameters)           
 
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -7959,8 +7958,8 @@ A bunch of curated lists from online media. For each list, you&#x27;ll get basic
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -7969,8 +7968,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("page", "2");
-    val response = objClient.fetchCuratedPodcastsLists(parameters);            
+    parameters.put("page", "2")
+    val response = objClient.fetchCuratedPodcastsLists(parameters)           
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -9399,8 +9398,8 @@ Podcast hosting services can use this endpoint to help your users directly submi
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -9409,8 +9408,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("rss", "https://feeds.megaphone.fm/committed");
-    val response = objClient.submitPodcast(parameters);            
+    parameters.put("rss", "https://feeds.megaphone.fm/committed")
+    val response = objClient.submitPodcast(parameters)     
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -9530,8 +9529,8 @@ Podcast hosting services can use this endpoint to streamline the process of podc
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -9540,8 +9539,8 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("id", "4d3fe717742d4963a85562e9f84d8c79");
-    val response = objClient.deletePodcast(parameters);            
+    parameters.put("id", "4d3fe717742d4963a85562e9f84d8c79")
+    val response = objClient.deletePodcast(parameters)    
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -9612,8 +9611,8 @@ You can fetch all playlists created by you, and **public** / **unlisted** playli
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -9622,9 +9621,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("id", "m1pe7z60bsw");
-    parameters.put("type", "podcast_list");
-    val response = objClient.fetchPlaylistById(parameters);            
+    parameters.put("id", "m1pe7z60bsw")
+    parameters.put("type", "podcast_list")
+    val response = objClient.fetchPlaylistById(parameters)          
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
@@ -10818,8 +10817,8 @@ You can use the **page** parameter to do pagination and fetch more playlists.
 Example:
 ```kotlin
 
-import com.listennotes.podcast_api.Client;
-import com.listennotes.podcast_api.exception.*;
+import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.*
 
 fun main() {
   try {
@@ -10828,9 +10827,9 @@ fun main() {
 
     val parameters = HashMap<String, String> ()
     
-    parameters.put("page", "2");
-    parameters.put("sort", "name_a_to_z");
-    val response = objClient.fetchMyPlaylists(parameters);            
+    parameters.put("page", "2")
+    parameters.put("sort", "name_a_to_z")
+    val response = objClient.fetchMyPlaylists(parameters)            
         
     println(response.toJSON().toString(2))
   } catch (e: AuthenticationException) {
