@@ -133,7 +133,7 @@ the sort of error that occurred.
 
 All exception classes can be found in [this folder](https://github.com/ListenNotes/podcast-api-java/tree/main/src/main/java/com/listennotes/podcast_api/exception).
 
-And you can see some sample code [here](https://github.com/ListenNotes/podcast-api-java/blob/main/src/main/java/com/listennotes/podcast_api/Sample.java).
+And you can see some sample code [here](https://github.com/ListenNotes/podcast-api-kotlin/blob/main/app/src/main/kotlin/podcast/api/kotlin/demo/App.kt).
 
 
 
