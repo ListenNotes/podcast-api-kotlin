@@ -1,6 +1,6 @@
 # Podcast API Kotlin Library
 
-<!-- [![Build Status](https://travis-ci.com/ListenNotes/podcast-api-kotlin.svg?branch=main)](https://travis-ci.com/ListenNotes/podcast-api-kotlin) -->
+[![Kotlin Run Sample App](https://github.com/ListenNotes/podcast-api-kotlin/actions/workflows/run-sample-app.yml/badge.svg)](https://github.com/ListenNotes/podcast-api-kotlin/actions/workflows/run-sample-app.yml)
 
 The Podcast API Kotlin library provides convenient access to the [Listen Notes Podcast API](https://www.listennotes.com/api/) from
 applications written in the Kotlin language.
