@@ -2596,7 +2596,7 @@ fun main() {
     val parameters = HashMap<String, String> ()
     
     parameters.put("page", "2")
-    parameters.put("region_id", "93")
+    parameters.put("genre_id", "93")
     val response = objClient.fetchBestPodcasts(parameters)        
 
     println(response.toJSON().toString(2))
