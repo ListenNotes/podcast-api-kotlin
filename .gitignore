@@ -30,3 +30,4 @@ app/bin/
 .project
 
 .settings/
+.vscode/
