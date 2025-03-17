@@ -12,6 +12,6 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21'
-          distribution: 'oracle'
+          distribution: 'adopt'
       - name: Run Sample App
         run: ./gradlew run
