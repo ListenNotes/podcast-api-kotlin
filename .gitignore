@@ -31,3 +31,6 @@ app/bin/
 
 .settings/
 .vscode/
+
+.kotlin/
+.ci-java-sdk/
