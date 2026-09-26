@@ -210,6 +210,12 @@ object GeneratedExamples {
         return client.updatePlaylist(parameters)
     }
 
+    fun deletePlaylist(client: Client): ApiResponse {
+        val parameters = HashMap<String, String>()
+        parameters.put("id", "m1pe7z60bsw")
+        return client.deletePlaylist(parameters)
+    }
+
     fun addPlaylistItem(client: Client): ApiResponse {
         val parameters = HashMap<String, String>()
         parameters.put("id", "m1pe7z60bsw")
@@ -262,6 +268,7 @@ object GeneratedExamples {
             "getPodcastsByDomainName" -> client.fetchPodcastsByDomain(parameters)
             "createPlaylist" -> client.createPlaylist(parameters)
             "updatePlaylist" -> client.updatePlaylist(parameters)
+            "deletePlaylist" -> client.deletePlaylist(parameters)
             "addPlaylistItem" -> client.addPlaylistItem(parameters)
             "deletePlaylistItem" -> client.deletePlaylistItem(parameters)
             "updatePlaylistItemNotes" -> client.updatePlaylistItemNotes(parameters)
