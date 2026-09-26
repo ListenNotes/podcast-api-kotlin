@@ -1,14 +1,19 @@
 package podcast.api.kotlin.demo
 
 import com.listennotes.podcast_api.Client
+import com.listennotes.podcast_api.exception.InvalidRequestException
+import com.listennotes.podcast_api.exception.NotFoundException
 import com.listennotes.podcast_api.exception.PermissionDeniedException
-import org.junit.jupiter.api.*
+import org.junit.jupiter.api.DynamicTest
+import org.junit.jupiter.api.Tag
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestFactory
 import org.junit.jupiter.api.Assertions.*
 import podcast.api.testing.Support
 
 class ExamplesTest {
     @TestFactory
-    fun allMethods() = Support.operations().map { op ->
+    fun allMethods() = Support.operations().also { assertEquals(31, it.size) }.map { op ->
         DynamicTest.dynamicTest(op.getString("func")) {
             Support().use { server ->
                 val client = Client("kotlin-test", server.baseUrl())
@@ -24,6 +29,41 @@ class ExamplesTest {
                 Support.verify(op, parameters, request)
                 assertEquals(before, parameters)
             }
+        }
+    }
+
+    @Test
+    fun deletePlaylistResponseEncodingAndErrors() {
+        Support().use { server ->
+            val client = Client("kotlin-test", server.baseUrl())
+            val parameters = mapOf("id" to "list/+ ?#é")
+            server.responseBody = """{"id":"list/+ ?#é","deleted":true}"""
+            val response = GeneratedExamples.call(client, "deletePlaylist", parameters)
+            assertEquals(200, response.getStatusCode())
+            assertTrue(response.toJSON().getBoolean("deleted"))
+            assertEquals(parameters["id"], response.toJSON().getString("id"))
+            assertEquals(12, response.getUsage())
+            val request = server.take()
+            assertEquals("DELETE", request.method())
+            assertEquals("/api/v2/playlists/list%2F%2B%20%3F%23%C3%A9", request.uri().rawPath)
+            assertNull(request.uri().rawQuery)
+            assertEquals("", request.body())
+            assertEquals("kotlin-test", request.key())
+            assertEquals(mapOf("id" to "list/+ ?#é"), parameters)
+            for (invalid in listOf(emptyMap(), mapOf("id" to ""), mapOf("id" to " "))) {
+                assertThrows(InvalidRequestException::class.java) {
+                    GeneratedExamples.call(client, "deletePlaylist", invalid)
+                }
+            }
+            server.status = 404
+            server.responseBody = """{"error":"Playlist not found"}"""
+            val error = assertThrows(NotFoundException::class.java) { GeneratedExamples.deletePlaylist(client) }
+            assertEquals(404, error.getStatusCode())
+            assertEquals("Playlist not found", error.getResponse().toJSON().getString("error"))
+            assertEquals(12, error.getResponse().getUsage())
+            val exampleRequest = server.take()
+            assertEquals("DELETE", exampleRequest.method())
+            assertEquals("/api/v2/playlists/m1pe7z60bsw", exampleRequest.uri().rawPath)
         }
     }
 
@@ -61,6 +101,11 @@ class MockIntegrationTest {
             val response = GeneratedExamples.call(Client(), op.getString("operationId"), Support.parameters(op))
             assertTrue(response.getStatusCode() in listOf(200, 201))
             assertFalse(response.toJSON().isEmpty)
+            if (op.getString("operationId") == "deletePlaylist") {
+                assertEquals(200, response.getStatusCode())
+                assertTrue(response.toJSON().getBoolean("deleted"))
+                assertEquals(Support.parameters(op)["id"], response.toJSON().getString("id"))
+            }
         }
     }
 
