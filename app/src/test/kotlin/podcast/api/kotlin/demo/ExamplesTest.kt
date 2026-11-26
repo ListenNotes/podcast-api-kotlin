@@ -13,7 +13,7 @@ import podcast.api.testing.Support
 
 class ExamplesTest {
     @TestFactory
-    fun allMethods() = Support.operations().also { assertEquals(31, it.size) }.map { op ->
+    fun allMethods() = Support.operations().also { assertEquals(35, it.size) }.map { op ->
         DynamicTest.dynamicTest(op.getString("func")) {
             Support().use { server ->
                 val client = Client("kotlin-test", server.baseUrl())
@@ -99,7 +99,7 @@ class MockIntegrationTest {
     fun allMethods() = Support.operations().map { op ->
         DynamicTest.dynamicTest(op.getString("func")) {
             val response = GeneratedExamples.call(Client(), op.getString("operationId"), Support.parameters(op))
-            assertTrue(response.getStatusCode() in listOf(200, 201))
+            assertTrue(response.getStatusCode() in 200..299)
             assertFalse(response.toJSON().isEmpty)
             if (op.getString("operationId") == "deletePlaylist") {
                 assertEquals(200, response.getStatusCode())

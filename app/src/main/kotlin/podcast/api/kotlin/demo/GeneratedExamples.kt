@@ -239,6 +239,30 @@ object GeneratedExamples {
         return client.updatePlaylistItemNotes(parameters)
     }
 
+    fun estimateEpisodeTranscription(client: Client): ApiResponse {
+        val parameters = HashMap<String, String>()
+        parameters.put("id", "dc09fd798802477b8dba0ca1e10134fa")
+        return client.estimateEpisodeTranscription(parameters)
+    }
+
+    fun transcribeEpisode(client: Client): ApiResponse {
+        val parameters = HashMap<String, String>()
+        parameters.put("id", "1871d978bdc648588441bc5649857ddb")
+        return client.transcribeEpisode(parameters)
+    }
+
+    fun getEpisodeTranscript(client: Client): ApiResponse {
+        val parameters = HashMap<String, String>()
+        parameters.put("id", "1871d978bdc648588441bc5649857ddb")
+        return client.getEpisodeTranscript(parameters)
+    }
+
+    fun listTranscripts(client: Client): ApiResponse {
+        val parameters = HashMap<String, String>()
+        parameters.put("limit", "20")
+        return client.listTranscripts(parameters)
+    }
+
     fun call(client: Client, operation: String, parameters: Map<String, String>): ApiResponse =
         when (operation) {
             "search" -> client.search(parameters)
@@ -272,6 +296,10 @@ object GeneratedExamples {
             "addPlaylistItem" -> client.addPlaylistItem(parameters)
             "deletePlaylistItem" -> client.deletePlaylistItem(parameters)
             "updatePlaylistItemNotes" -> client.updatePlaylistItemNotes(parameters)
+            "estimateEpisodeTranscription" -> client.estimateEpisodeTranscription(parameters)
+            "transcribeEpisode" -> client.transcribeEpisode(parameters)
+            "getEpisodeTranscript" -> client.getEpisodeTranscript(parameters)
+            "listTranscripts" -> client.listTranscripts(parameters)
             else -> error("Unknown operation: $operation")
         }
 }
